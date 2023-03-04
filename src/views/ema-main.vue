@@ -14,7 +14,7 @@
     >
       <template v-slot:header="{ props: { headers } }">
         <thead>
-          <tr :title="headers.length">
+          <tr :title="headers.length" class="border-table">
             <th rowspan="2" class="border-table" width="20px"></th>
             <th
               rowspan="2"
@@ -63,126 +63,108 @@
           <tr>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_1h_12')"
             >
               EMA12
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_1h_21')"
             >
               EMA21
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_1h_26')"
             >
               EMA26
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_1h_50')"
             >
               EMA50
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_1h_100')"
             >
               EMA100
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_1h_200')"
             >
               EMA200
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_4h_12')"
             >
               EMA12
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_4h_21')"
             >
               EMA21
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_4h_26')"
             >
               EMA26
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_4h_50')"
             >
               EMA50
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_4h_100')"
             >
               EMA100
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_4h_200')"
             >
               EMA200
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_24h_12')"
             >
               EMA12
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_24h_21')"
             >
               EMA21
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_24h_26')"
             >
               EMA26
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_24h_50')"
             >
               EMA50
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_24h_100')"
             >
               EMA100
             </th>
             <th
               class="border-table"
-              style="border-bottom: 1px solid rgb(170, 170, 170)"
               v-if="arrHeader.includes('ema_24h_200')"
             >
               EMA200
@@ -694,6 +676,11 @@ export default {
   color: white;
 }
 .border-table {
-  border: 1px solid rgb(170, 170, 170);
+  border-left: 1px solid rgb(49, 49, 49);
+  border-bottom: 1px solid rgb(49, 49, 49);
+
+}
+.custom_table_class {
+  /* border-collapse: collapse; */
 }
 </style>
