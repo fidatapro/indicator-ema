@@ -145,12 +145,12 @@
             >
               EMA21
             </th>
-            <th
+            <!-- <th
               class="border-table"
               v-if="arrHeader.includes('ema_24h_26')"
             >
               EMA26
-            </th>
+            </th> -->
             <th
               class="border-table"
               v-if="arrHeader.includes('ema_24h_50')"
@@ -362,11 +362,11 @@
           {{ getRealValue(item.ema_24h_21) }}
         </span>
       </template>
-      <template v-slot:[`item.ema_24h_26`]="{ item }">
+      <!-- <template v-slot:[`item.ema_24h_26`]="{ item }">
         <span :class="getEmaColor(item.ema_24h_26, item.coin_price)">
           {{ getRealValue(item.ema_24h_26) }}
         </span>
-      </template>
+      </template> -->
       <template v-slot:[`item.ema_24h_50`]="{ item }">
         <span :class="getEmaColor(item.ema_24h_50, item.coin_price)">
           {{ getRealValue(item.ema_24h_50) }}
@@ -444,7 +444,7 @@ export default {
       { text: "EMA 4 hour 200", value: "ema_4h_200", align: "center" },
       { text: "EMA 24hour 12", value: "ema_24h_12", align: "center" },
       { text: "EMA 24hour 21", value: "ema_24h_21", align: "center" },
-      { text: "EMA 24hour 26", value: "ema_24h_26", align: "center" },
+      // { text: "EMA 24hour 26", value: "ema_24h_26", align: "center" },
       { text: "EMA 24hour 50", value: "ema_24h_50", align: "center" },
       { text: "EMA 24hour 100", value: "ema_24h_100", align: "center" },
       { text: "EMA 24hour 200", value: "ema_24h_200", align: "center" },
@@ -485,7 +485,7 @@ export default {
     field24H: [
       "ema_24h_12",
       "ema_24h_21",
-      "ema_24h_26",
+      // "ema_24h_26",
       "ema_24h_50",
       "ema_24h_100",
       "ema_24h_200",
@@ -526,7 +526,7 @@ export default {
         ema_4h_200: x.ema_4h_200,
         ema_24h_12: x.ema_24h_12,
         ema_24h_21: x.ema_24h_21,
-        ema_24h_26: x.ema_24h_26 || 0,
+        // ema_24h_26: x.ema_24h_26 || 0,
         ema_24h_50: x.ema_24h_50,
         ema_24h_100: x.ema_24h_100,
         ema_24h_200: x.ema_24h_200,
@@ -577,7 +577,10 @@ export default {
       this.check_favorite = !this.check_favorite;
       if (this.check_favorite) {
         const check_list_coin = localStorage.getItem("COIN_FAVORITE");
-        if (!check_list_coin) return;
+        if (!check_list_coin){
+          this.data_table = []
+          return;
+        } 
         const list_coin = JSON.parse(check_list_coin);
         this.data_table = this.data.filter((x) =>
           list_coin.includes(x.coin_name)
