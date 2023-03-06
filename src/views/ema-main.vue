@@ -535,7 +535,7 @@ export default {
       this.$refs.dialogColumn.setLisColumnShow();
       this.getColumnShow();
       this.loading = false;
-      setTimeout(() => this.initialize(), 5 * 60 * 1000);
+      setInterval(() => this.initialize(), 5 * 60 * 1000);
     },
     getColumnShow() {
       const ema_colum = localStorage.getItem("EMA_COLUMN");
