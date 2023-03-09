@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <v-data-table
       :headers="headers_"
       :items="data_table"
@@ -686,4 +686,9 @@ export default {
 .custom_table_class {
   /* border-collapse: collapse; */
 }
+.v-data-table {
+  background:url(@/assets/watermarked.png) no-repeat; 
+  background-position: center;
+}
+
 </style>
